@@ -4,31 +4,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RatingComponent } from './rating/rating.component';
-import { HomescreenComponent } from './screens/homescreen/homescreen.component';
-import { MusicianprofilescreenComponent } from './Screens/musicianprofilescreen/musicianprofilescreen.component';
-import { BandsscreenComponent } from './Screens/bandsscreen/bandsscreen.component';
+import { FormsModule } from '@angular/forms';
+import {RouterModule} from '@angular/router';
 import { HomeComponent } from './Screens/home/home.component';
+import { CreatedBandComponent } from './Screens/created-band/created-band.component';
 import { CreateBandComponent } from './Screens/create-band/create-band.component';
 import { BandProfileComponent } from './Screens/band-profile/band-profile.component';
-import { CreatedBandComponent } from './Screens/created-band/created-band.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RatingComponent,
-    HomescreenComponent,
-    MusicianprofilescreenComponent,
-    BandsscreenComponent,
-    HomeComponent,
-    CreateBandComponent,
-    BandProfileComponent,
-    CreatedBandComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    RouterModule.forRoot([
+      {path: 'home', component: HomeComponent},
+      {path: 'bandprofile', component: BandProfileComponent},
+      {path: 'createband', component: CreateBandComponent},
+      {path: 'createdband', component: CreatedBandComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
