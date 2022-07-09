@@ -6,6 +6,9 @@ const mysql = require('mysql2');
 const { findAll } = require('sequelize/lib/model');
 var passport = require('../services/passport'); // <--- Add this code
 
+
+
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
